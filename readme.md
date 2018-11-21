@@ -2,6 +2,6 @@
 
 ### based on sshpass - the tool which helps to authorize using emulation of password input
 
-* server-ip - files with the list of server to check (provide using /n for each entry)
+* server-ip - files with the list of servers to check (provide using /n for each entry)
 *
 *
