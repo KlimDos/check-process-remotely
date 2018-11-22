@@ -4,4 +4,5 @@
 
 * server-ip - files with the list of servers to check (provide using /n for each entry)
 *
-*
+* Usage:\n
+         `<sid_file> <root user pwd> <mode option> could be 1/2/3`
