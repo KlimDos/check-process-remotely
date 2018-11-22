@@ -24,7 +24,7 @@ fi
 
 #command which we would like to execute
 if [ ${MODE} -eq 1 ]; then
-    COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f9,16'
+    COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f5,16'
 elif [ ${MODE} -eq 2 ]; then
     COMMAND_TO_EXECUTE=" > /etc/motd && ${NEW_LINE} && cat /proc/version >> /etc/motd && ${NEW_LINE} && cat /proc/cmdline >> /etc/motd && ${NEW_LINE}"
 elif [ ${MODE} -eq 3 ]; then
