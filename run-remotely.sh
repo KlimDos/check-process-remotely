@@ -9,8 +9,13 @@ COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f9,16'
 #adding current dir to PATH to be able to use sshpass tool
 PATH=$PATH:${PWD}
 # simple check for proper command usage
+<<<<<<< HEAD:check-process-remotely.sh
 if ! [ -r "${SID_FILE}" -a -n "${PASSWORD}" ]; then
     echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd>\n" 
+=======
+if ! [ -r "${SID_FILE}" -a -n "${PASSWORD}" -a -n "${MODE}" ]; then
+    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2 \n" 
+>>>>>>> 7d0affe... task 2:run-remotely.sh
     exit 1
 fi
 # check the ability of sshpass to be executed 
@@ -18,6 +23,21 @@ if ! which sshpass &>/dev/null; then
     echo "You should copy sshpass to your current or PATH directory"
     exit 1
 fi
+<<<<<<< HEAD:check-process-remotely.sh
+=======
+
+#command which we would like to execute
+if [ ${MODE} -eq 1 ]; then
+    COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f5,16'
+elif [ ${MODE} -eq 2 ]; then
+    COMMAND_TO_EXECUTE=" > /etc/motd && ${NEW_LINE} && cat /proc/version >> /etc/motd && ${NEW_LINE} && cat /proc/cmdline >> /etc/motd && ${NEW_LINE}"
+else
+    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2 \n" 
+    exit 1
+fi
+
+
+>>>>>>> 7d0affe... task 2:run-remotely.sh
 # the main loop
 while read sid; do 
     echo "Running script on $sid..."
