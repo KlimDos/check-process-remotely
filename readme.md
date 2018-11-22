@@ -6,3 +6,4 @@
 *
 * Usage:\n
          `<sid_file> <root user pwd> <mode option> could be 1/2/3`
+
