@@ -12,7 +12,7 @@ NEW_LINE='echo -e "\n" >> /etc/motd'
 
 # simple check for proper command usage
 if ! [ -r "${SID_FILE}" -a -n "${PASSWORD}" -a -n "${MODE}" ]; then
-    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2/3 \n" 
+    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2 \n" 
     exit 1
 fi
 
@@ -27,10 +27,8 @@ if [ ${MODE} -eq 1 ]; then
     COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f5,16'
 elif [ ${MODE} -eq 2 ]; then
     COMMAND_TO_EXECUTE=" > /etc/motd && ${NEW_LINE} && cat /proc/version >> /etc/motd && ${NEW_LINE} && cat /proc/cmdline >> /etc/motd && ${NEW_LINE}"
-elif [ ${MODE} -eq 3 ]; then
-    COMMAND_TO_EXECUTE='ps aux |grep [d]hclient | tr -s " " | cut -d" " -f11,18'
 else
-    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2/3 \n" 
+    echo -e "\nUsage:\n\t$0 <sid_file> <root user pwd> <mode option> could be 1/2 \n" 
     exit 1
 fi
 
