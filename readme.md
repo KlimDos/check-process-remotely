@@ -38,4 +38,3 @@ A parsing script to fetch the user’s friend’s name those “id” equals “
 
 ***
 **link to the full task description** - [secret gist](https://gist.github.com/KlimDos/348fd5d2e7d05f7cd0cc287ef42616e1)
->>>>>>> 7d0affe... task 2
