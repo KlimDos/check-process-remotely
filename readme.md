@@ -28,8 +28,8 @@ A parsing script to fetch the user’s friend’s name those “id” equals “
 
 - `parser.py` - Main script 
   - requirements:
-        - python 2.5
-        - JSON lib
+    - python 2.5
+    - JSON lib
 - `data.json` - File contains JSON payload
 
 ### Usage:
